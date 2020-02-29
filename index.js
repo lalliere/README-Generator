@@ -1,26 +1,13 @@
-let inquirer = require("inquirer");
-let fs = require("fs");
-const axios = require("axios");
+const inquirer = require("inquirer");
+const fs = require("fs");
+const api = require("./api");
 
-function userInfo() {
-    inquirer
-    .prompt({
+const questions = [
+    {
         type: "input",   
         name: "username",
         message: "Enter your GitHub username:"
-    })
-    .then(function({ username }) {
-        const queryUrl = `https://api.github.com/users/${username}`;
-
-        axios.get(queryUrl).then(function(response) {
-        return response.email, response.avatar_url;
-        
-        });
-    });
-};
-
-
-const questions = [
+    },
     {
         type: "input",
         name: "title",
@@ -30,19 +17,6 @@ const questions = [
         type: "input",
         name: "description",
         message: "What is the description of your project?"
-    },
-    {
-        type: "confirm",
-        name: "getToc",
-        message: "Do you want to include a Table of Contents?"
-      },
-    {
-        type: "input",
-        name: "toc",
-        message: "Please list the Table of Contents:",
-        when: function(responses) {
-            return responses.getToc;
-        }
     },
     {
         type: "input",
@@ -77,33 +51,50 @@ function writeToFile(fileName, data) {
         if (err) {
           console.log(err)
         }
-        console.log("README.md created")
+        console.log("README.md created!")
     })
 }
 
 function init() {
-    userInfo();
     inquirer
     .prompt(questions)
     .then(answers => {
+        api.getUser(`${answers.username}`)
         const content = 
-        `# ${answers.title}
-        ## Description
-        ${answers.description}
-        ## Table of Contents
-        ${answers.toc}
-        ## Installation Instructions
-        ${answers.installation}
-        ## Project Usage
-        ${answers.usage}
-        ## License
-        ${answers.license}
-        ## Contributors
-        ${answers.contribution}
-        ## Tests
-        ${answers.tests}
-        `
-      writeToFile("README.md", content)
+`    
+# ${answers.title}
+
+## Project Description
+${answers.description}
+
+## Table of Contents
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [License](#License)
+* [Contribution](#Contribution)
+* [Tests](#Tests)
+
+## Installation Instructions
+${answers.installation}
+
+## Project Usage
+${answers.usage}
+
+## License
+${answers.license}
+
+## Contributors
+${answers.contribution}
+
+## Tests
+${answers.tests}
+
+## Got Questions? Ask Me:
+* GitHub Profile: https://github.com/${answers.username}
+* My Email: ${api.userEmail}
+* ![Profile Image](${api.profileImg})
+`      
+        writeToFile("README.md", content)
     });
 }
 
