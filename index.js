@@ -2,6 +2,8 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const api = require("./api");
 
+//console.log(api);
+
 const questions = [
     {
         type: "input",   
@@ -44,7 +46,6 @@ const questions = [
         message: "What are the tests associated with this project?"
     }
 ];
-
 
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, function(err) {
