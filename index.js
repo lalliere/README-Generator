@@ -2,7 +2,6 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const api = require("./api");
 
-//console.log(api);
 
 const questions = [
     {
@@ -56,14 +55,23 @@ function writeToFile(fileName, data) {
     })
 }
 
-function init() {
+function init(data) {
+    writeToFile("README.md", data)
+}
+
+function askQuestions() {
     inquirer
     .prompt(questions)
-    .then(answers => {
-        api.getUser(`${answers.username}`)
-        const content = 
-`    
+    .then(function(answers) {
+        api.getUser(`${answers.username}`).then(function(response) {
+            return response.data;
+        });
+
+        let content = 
+        `    
 # ${answers.title}
+
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
 ## Project Description
 ${answers.description}
@@ -92,11 +100,16 @@ ${answers.tests}
 
 ## Got Questions? Ask Me:
 * GitHub Profile: https://github.com/${answers.username}
-* My Email: ${api.userEmail}
-* ![Profile Image](${api.profileImg})
-`      
-        writeToFile("README.md", content)
-    });
+* My Email: ${response.data.email}
+* ![Profile Image](${response.data.avatar_url})
+`
+
+    ;
+    
+    init(content);
+    }); 
 }
 
-init();
+askQuestions();
+
+
