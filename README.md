@@ -1,10 +1,10 @@
     
-# as
+# README Generator
 
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
 ## Project Description
-s
+This application will quickly provide you with a README template for your project, based on user input to prompted questions in the terminal.
 
 ## Table of Contents
 * [Installation Instructions](#Installation-Instructions)
@@ -15,19 +15,19 @@ s
 * [Got Questions](#Got-Questions)
 
 ## Installation Instructions
-s
+None
 
 ## Project Usage
-s
+You can use this for anything that requires a README: Homework Assignments, Project Work, Personal Repos, etc.
 
 ## License
-s
+None
 
 ## Contributors
-s
+Emily Lallier
 
 ## Tests
-s
+None
 
 ## Got Questions? 
 ### Ask Me:
