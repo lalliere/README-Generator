@@ -73,12 +73,12 @@ function askQuestions() {
 ${answers.description}
 
 ## Table of Contents
-* [Installation](#Installation)
-* [Usage](#Usage)
+* [Installation Instructions](#Installation-Instructions)
+* [Project Usage](#Project-Usage)
 * [License](#License)
-* [Contribution](#Contribution)
+* [Contributors](#Contributors)
 * [Tests](#Tests)
-* [Questions](#Questions)
+* [Got Questions](#Got-Questions)
 
 ## Installation Instructions
 ${answers.installation}
@@ -95,7 +95,8 @@ ${answers.contribution}
 ## Tests
 ${answers.tests}
 
-## Got Questions? Ask Me:
+## Got Questions? 
+### Ask Me:
 * GitHub Profile: https://github.com/${answers.username}
 * My Email: ${response.data.email}
 
