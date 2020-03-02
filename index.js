@@ -78,6 +78,7 @@ ${answers.description}
 * [License](#License)
 * [Contribution](#Contribution)
 * [Tests](#Tests)
+* [Questions](#Questions)
 
 ## Installation Instructions
 ${answers.installation}
@@ -97,7 +98,8 @@ ${answers.tests}
 ## Got Questions? Ask Me:
 * GitHub Profile: https://github.com/${answers.username}
 * My Email: ${response.data.email}
-* ![Profile Image](${response.data.avatar_url})
+
+  ![Profile Image](${response.data.avatar_url})
 `
         
         ;
