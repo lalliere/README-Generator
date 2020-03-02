@@ -55,17 +55,13 @@ function writeToFile(fileName, data) {
     })
 }
 
-function init(data) {
-    writeToFile("README.md", data)
-}
 
 function askQuestions() {
     inquirer
     .prompt(questions)
     .then(function(answers) {
         api.getUser(`${answers.username}`).then(function(response) {
-            return response.data;
-        });
+              
 
         let content = 
         `    
@@ -103,11 +99,13 @@ ${answers.tests}
 * My Email: ${response.data.email}
 * ![Profile Image](${response.data.avatar_url})
 `
-
-    ;
+        
+        ;
     
-    init(content);
-    }); 
+        writeToFile("README.md", content);
+        });
+    });
+    
 }
 
 askQuestions();

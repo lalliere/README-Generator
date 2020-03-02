@@ -1,10 +1,10 @@
     
-# dd
+# hihi
 
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
 ## Project Description
-dd
+hihi
 
 ## Table of Contents
 * [Installation](#Installation)
@@ -14,21 +14,21 @@ dd
 * [Tests](#Tests)
 
 ## Installation Instructions
-dd
+hihi
 
 ## Project Usage
-dd
+hihi
 
 ## License
-dd
+hihi
 
 ## Contributors
-dd
+hihi
 
 ## Tests
-dd
+hihi
 
 ## Got Questions? Ask Me:
-* GitHub Profile: https://github.com/lalliere
-* My Email: undefined
-* ![Profile Image](undefined)
+* GitHub Profile: https://github.com/HannahYudkin
+* My Email: hannahyudkin@gmail.com
+* ![Profile Image](https://avatars3.githubusercontent.com/u/23423326?v=4)
