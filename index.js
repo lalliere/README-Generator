@@ -105,7 +105,7 @@ ${answers.tests}
         
         ;
     
-        writeToFile("README.md", content);
+        writeToFile("newREADME.md", content);
         });
     });
     
